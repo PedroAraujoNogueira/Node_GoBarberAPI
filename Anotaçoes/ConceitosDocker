@@ -1,0 +1,34 @@
+O docker ajuda a controlar os serviços da aplicação, banco de dados ou serviço de enviar email por exemplo.
+
+Usaremos o docker para a criação de ambientes isolados(container), ou seja, ambientes que nao iram interferir no funcionamento de outras ferramentas/tecnologias usadas no nosso servidor.
+
+Containers expoem portas para comunicação e a nossa aplicação usará essa porta para comunicação.
+
+Principais conceitos do docker:
+
+1. Imagem: imagem é um serviço disponível do docker. Exemplos seria Postgres, MySQL, Redis e etc... tudo isso sao imagens do docker. Imagens são ferramentas/tecnologias que podemos colocar dentro de containers.
+
+2. Container é uma instancia de uma imagem. Então se pensarmos que a imagem é o PostgresSql então podemos ter 3 containers(nesse caso representando 3 banco de dados) rodando com a mesma imagem, ou seja, 3 banco de dados Postgress dentro do nosso ambiente de desenvolvimento rodando com a imagem do postgress.
+
+3. Docker Registry(docker hub): registro onde estão todas as imagens do docker.
+
+4. Permite criar uma imagem da nossa aplicação. São os passos de configuração para nossa aplicação rodar e ser configurada a partir do zero.
+
+Comandos:
+
+1. docker -v, para ver a versão do docker instalada.
+
+2. docker help, mostra todos os comandos que podem ser utilizados pelo nosso docker. Pode ser usado para saber se sua aplicação está rodando.
+
+3. docker ps, mostra todos os containers que estão em execuçaõ no momento.
+
+OBS: se fecharmos a maquina ou fecharmos o docker o nosso container irá parar de executar.
+
+4. docker stop nomeDoContainer, para a execução do nosso container.
+
+5. docker ps -a, mostra todos os containers de sua maquina, mesmo aqueles que nao estao em execução.
+
+6. docker start nomeDoContainer, coloca em execução o nosso container.
+
+7. docker logs nomeDoContainer, mostra possíveis erros que deram na execuçao do nosso container.
+

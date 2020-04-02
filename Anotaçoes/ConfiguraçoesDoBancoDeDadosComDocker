@@ -1,0 +1,19 @@
+Para instalarmos uma imagem do Postgres no Docker podemos acessar:
+
+https://hub.docker.com/_/postgres,
+
+Nesse site poderemos ver todas as versoes que temos do Postgress disponíveis para o docker utilizar. Se não específicarmos qual versao queremos usar no nosso container entao o container vai assumir a ultima versao estavel do postgress.
+
+Mais a baixo na página podemos ver o comando para iniciar um container com postgress:
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres,
+Ex: docker run --name galeradojs -e POSTGRES_PASSWORD= senhaqualquer -p 5434:5432 -d postgres
+onde:
+galeradojs = nome do container.
+senhaquelquer = senha de sua escolha para o banco de dados.
+flag -p = para redirecionamento de porta.
+5434:5432 => estamos dizendo que nossa aplicaçao ira usar a porta localhost 5434 e estaremos acessando a porta 5432 do docker/container que é a porta onde o postgress está rodando.  
+postgres: nome da imagem que estamos utilizando.
+
+Apos utilizar o comando acima use 'docker ps' no terminal e verá que o conteiner criado já está em execuçao.
+
