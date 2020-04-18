@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2020-03-21T17:02:41.110691217"/>
+	<meta name="changed" content="2020-03-21T19:04:47.571841872"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115% }
+		pre.cjk { font-family: "DejaVu Sans Mono", monospace }
+		a:link { so-language: zxx }
+		code.cjk { font-family: "DejaVu Sans Mono", monospace }
+	</style>
+</head>
+<body lang="pt-BR" dir="ltr">
+<p style="margin-bottom: 0cm; line-height: 100%"><font size="5" style="font-size: 18pt">Instalação
+do node para UNIX: </font>
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal">
+<font color="#0a0a0a"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Antes
+de começarmos a instalação, precisamos de alguns pacotes de
+dependências. No terminal, digite:</font></font></font></p>
+<pre class="western" style="margin-bottom: 0.5cm; border: none; padding: 0cm; text-align: left; orphans: 2; widows: 2; background: #29292e"><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#eff0f9"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #29292e"><code class="western">$ sudo apt update</span></span></span></span></span></font></font></font></span></code></pre><p align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#0a0a0a"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Para
+atualizar a lista de repositórios da distribuição Linux.</font></font></font></p>
+<pre class="western" style="margin-bottom: 0.5cm; border: none; padding: 0cm; text-align: left; orphans: 2; widows: 2; background: #29292e"><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#eff0f9"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #29292e"><code class="western">$ sudo apt install build-essential libssl-dev</span></span></span></span></span></font></font></font></span></code></pre><p style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">1. Instalação do
+Node usando NVM(Node Version Manager). Essa é a forma mais
+recomedada para sistemas UNIX, ou seja, Linux e MAC.</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">- O NVM vai nos
+permitir instalar diferentes versões do Node, atualizar a versão do
+Node ou mudar para a versão do Node para uma versão específica que
+o projeto precise, tudo feito de uma forma muito fácil. 
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Podemos instalar o
+NVM seguindo os passos dispostos aqui <a href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a>.
+Porém vou tentar explicar alguns pontos: 
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%">Para instalarmos o
+NVM podemos usar o comando com curl no terminal: 
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<pre class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bater</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Se você não tiver o curl instalado use no terminal so seguinte comando para instalar:</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">sudo apt install curl -y</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Ou podemos usar no terminal o comando com Wget, que já vem por padrão em todo sistema UNIX:</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bater</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">2. Instalar variáveis de ambiente, que é onde determina onde estão os arquivos executáveis no nosso computador.</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">2.1. Precisamos adicionar essas linhas no nosso arquivo de configuração do terminal: </font></font></font>
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">	</font></font></font>
+<font color="#24292e"><font face="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace"><font size="2" style="font-size: 9pt"><font color="#d73a49">exportar</font> NVM_DIR = <font color="#032f62">&quot; $ ( [ </font><font color="#d73a49">-z </font><font color="#032f62"> &quot; </font>$ {XDG_CONFIG_HOME-} <font color="#032f62">&quot; ] </font><font color="#d73a49">&amp;&amp; </font><font color="#032f62"> </font><font color="#005cc5">printf</font><font color="#032f62"> % s &quot; </font>$ {HOME}<font color="#032f62"> /.nvm &quot; </font><font color="#d73a49"> || </font><font color="#032f62"> </font><font color="#005cc5">printf</font><font color="#032f62"> % s &quot; </font>$ {XDG_CONFIG_HOME}<font color="#032f62"> / nvm &quot; ) &quot;</font> </font></font></font>
+<font color="#24292e"><font face="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace"><font size="2" style="font-size: 9pt">[ <font color="#d73a49">-s </font> <font color="#032f62">&quot; </font>$ NVM_DIR<font color="#032f62"> /nvm.sh &quot;</font> ] <font color="#d73a49">&amp;&amp; </font> \.  <font color="#032f62">&quot; </font>$ NVM_DIR<font color="#032f62"> /nvm.sh &quot; </font> <font color="#6a737d"># Isso carrega nvm</font></font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">2.2. Se você não tiver instalado nenhum terminal diferente então seu arquivo de configuração do terminal deve estar na pasta home com o nome:</font></font></font>
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><code class="western"><font face="Liberation Serif, serif">	.bash_profile, .profile </font></code><code class="western"><font face="Liberation Serif, serif">ou </font></code><code class="western"><font face="Liberation Serif, serif">.bashrc</font></code></font></font></font>
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><code class="western"><font face="Liberation Serif, serif">Adicione a linha do item 2.1 em um desses arquivos.</font></code></font></font></font>
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Se você estiver usando outro terminal diferente do padrão então seu arquivo de configuração deve estar na pasta home com o nome de </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#24292e"><font face="SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace"><font size="2" style="font-size: 9pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.zshrc. </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Adicione a linha do item 2.1 </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">nesse arquivo.</span></span></span></font></font></font></span></code>
+
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">3.  </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Reinicie seu terminal </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">e </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">e</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0a0a0a"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">xecute o comando</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0a0a0a"><font face="Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif"><font size="4" style="font-size: 15pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">nvm ls-remote </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0a0a0a"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Ele vai exibir várias versões do Node e assim sabermos se o NVM está funcionando corretamente.</span></span></span></font></font></font></span></code>
+
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">3.1 Agora precisamos instalar a versão do Node, para isso </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">execute o comando:</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">- nvm install versão, exemplo: nvm install 12.16.1</span></span></span></font></font></font></span></code>
+
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">3.2 Como podemos ter varias versões do Node instaladas na nossa máquina, podemo</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">s </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ter que dizer qual versão queremos que seja a versão padrão usada pelo sistema. </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Para isso executaremos no terminal o comando:</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">- </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">nvm alias default versão, por exemplo: nvm alias default 12.16.1</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">3.3 Agora podemos rodar o comando node -v e verificar se é mostrado a versão correta. </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Podemos também rodar npm -v para ver a versão do NPM que acompanha o Node. </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">NPM(Node Package Manager)  </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">é o gerenciador de pacotes do Node.</span></span></span></font></font></font></span></code>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="5" style="font-size: 18pt">Instalação do yarn:</font></font></font>
+
+<font color="#000000"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">-  O yarn é um gerenciador de pacotes para o Node, assim como o NPM, porém ele é mais veloz.</font></font></font>
+
+
+
+
+</pre><p style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>
